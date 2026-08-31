@@ -56,12 +56,37 @@ if (footerYear) {
     footerYear.textContent = new Date().getFullYear();
 }
 
-// ---------- Profile photo tap-to-toggle (for touch devices) ----------
-// On touch screens there's no real "hover" state to leave, so :hover
-// alone gets stuck after a tap. This adds a click/tap toggle on top of it.
+// ---------- Profile photo glitch transition ----------
 const imageContainer = document.querySelector(".image-container");
 if (imageContainer) {
-    imageContainer.addEventListener("click", () => {
-        imageContainer.classList.toggle("swapped");
-    });
+    let glitchEndTimeout;
+
+    function triggerGlitch(showBack) {
+        imageContainer.classList.add("glitching");
+        // Swap the actual image partway through the glitch burst so the
+        // switch itself gets masked by the jitter/scanline noise.
+        setTimeout(() => {
+            imageContainer.classList.toggle("swapped", showBack);
+        }, 220);
+
+        clearTimeout(glitchEndTimeout);
+        glitchEndTimeout = setTimeout(() => {
+            imageContainer.classList.remove("glitching");
+        }, 500);
+    }
+
+    const hasHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    if (hasHover) {
+        imageContainer.addEventListener("mouseenter", () => triggerGlitch(true));
+        imageContainer.addEventListener("mouseleave", () => triggerGlitch(false));
+    } else {
+        imageContainer.addEventListener("click", () => {
+            triggerGlitch(!imageContainer.classList.contains("swapped"));
+        });
+    }
+
+    // Keyboard users tabbing to the photo get the same effect
+    imageContainer.addEventListener("focus", () => triggerGlitch(true));
+    imageContainer.addEventListener("blur", () => triggerGlitch(false));
 }

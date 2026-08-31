@@ -29,14 +29,16 @@
         <section class="hero">
             <div class="hero-text">
                 <p class="eyebrow">Personal Profile</p>
-                <h1 id="title">Jhanzielle Jhay L. Amit</h1>
+                <h1 id="title"><span class="name-text">Jhanzielle Jhay L. Amit</span><img class="verified-badge" src="verified.png" alt="Verified"></h1>
                 <p class="hero-role">First-Year BSCS Student · Aspiring Software Engineer</p>
                 <p class="hero-summary">I'm learning Java, SQL, HTML, CSS, and JavaScript while building the habits and
                     projects that will get me there — one problem solved at a time.</p>
             </div>
-            <div class="image-container">
-                <img class="profile profile-base" src="rin.jfif" alt="Portrait of Jhanzielle Jhay L. Amit">
-                <img class="profile profile-hover" src="mypf.jfif" alt="" aria-hidden="true">
+            <div class="image-container" tabindex="0" aria-label="Toggle profile photo">
+                <div class="image-flip">
+                    <img class="profile profile-front" src="rin.jfif" alt="Portrait of Jhanzielle Jhay L. Amit">
+                    <img class="profile profile-back" src="mypf.jfif" alt="" aria-hidden="true">
+                </div>
             </div>
         </section>
 
@@ -147,13 +149,28 @@
         </section>
 
         <section id="skills">
-            <h2>Skills</h2>
+            <h2>Tech Stack</h2>
             <div class="skill-container">
-                <div class="skill-card">Java</div>
-                <div class="skill-card">SQL</div>
-                <div class="skill-card">HTML</div>
-                <div class="skill-card">CSS</div>
-                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">
+                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg" alt="">
+                    Java
+                </div>
+                <div class="skill-card">
+                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="">
+                    SQL
+                </div>
+                <div class="skill-card">
+                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" alt="">
+                    HTML
+                </div>
+                <div class="skill-card">
+                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" alt="">
+                    CSS
+                </div>
+                <div class="skill-card">
+                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="">
+                    JavaScript
+                </div>
             </div>
         </section>
 
@@ -165,7 +182,9 @@
                     <div class="project-description">
                         <p>A Java-based system for managing student records, including adding, updating,
                             deleting, and searching students.</p>
-                        <p class="project-tech">Java</p>
+                        <p class="project-tech">
+                            <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg" alt="Java">
+                        </p>
                         <a class="project-link" href="https://github.com/Janjieru-cmd/Student-Management-System.git" target="_blank" rel="noopener">View on GitHub →</a>
                     </div>
                 </div>
@@ -174,7 +193,9 @@
                     <h3>Banking System</h3>
                     <div class="project-description">
                         <p>A Java-based banking system designed to handle basic banking operations.</p>
-                        <p class="project-tech">Java</p>
+                        <p class="project-tech">
+                            <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg" alt="Java">
+                        </p>
                         <a class="project-link" href="https://github.com/Janjieru-cmd/Banking-System.git" target="_blank" rel="noopener">View on GitHub →</a>
                     </div>
                 </div>
@@ -184,7 +205,11 @@
                     <div class="project-description">
                         <p>A personal portfolio website that showcases my background, education, skills,
                             hobbies, projects, and social profiles.</p>
-                        <p class="project-tech">HTML, CSS, JS</p>
+                        <p class="project-tech">
+                            <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" alt="HTML">
+                            <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" alt="CSS">
+                            <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JavaScript">
+                        </p>
                         <a class="project-link" href="https://github.com/Janjieru-cmd/my-personal-profile.git" target="_blank" rel="noopener">View on GitHub →</a>
                     </div>
                 </div>
