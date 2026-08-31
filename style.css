@@ -59,6 +59,26 @@ p {
     margin: 0 0 12px;
 }
 
+/* ---------- Skip link ---------- */
+.skip-link {
+    position: absolute;
+    top: -48px;
+    left: 12px;
+    z-index: 2000;
+    background-color: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
 /* ---------- Header / nav ---------- */
 header {
     position: sticky;
@@ -158,19 +178,17 @@ button:focus-visible {
 }
 
 .hero h1 {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
+    white-space: nowrap;
 }
 
 .verified-badge {
     display: inline-block;
     width: 26px;
     height: 26px;
-    flex-shrink: 0;
+    margin-left: 8px;
+    vertical-align: middle;
 }
 
 .hero-role {
@@ -651,7 +669,7 @@ body.dark-mode .profile-links a:hover {
     }
 
     .hero h1 {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     .verified-badge {
@@ -689,7 +707,7 @@ body.dark-mode .profile-links a:hover {
     }
 
     .hero h1 {
-        font-size: 1.4rem;
+        font-size: 1.05rem;
     }
 }
 

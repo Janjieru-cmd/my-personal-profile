@@ -50,6 +50,26 @@ backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// ---------- Contact info (kept out of the raw HTML to slow down scrapers) ----------
+// Built from parts at runtime rather than sitting as plain text in the source.
+const emailParts = ["amitjhanzielle", "gmail.com"];
+const emailEl = document.querySelector("#contact-email");
+if (emailEl) {
+    const email = `${emailParts[0]}@${emailParts[1]}`;
+    emailEl.textContent = email;
+    const link = document.createElement("a");
+    link.href = `mailto:${email}`;
+    link.textContent = email;
+    emailEl.textContent = "";
+    emailEl.appendChild(link);
+}
+
+const phoneParts = ["+63", "961", "572", "0802"];
+const phoneEl = document.querySelector("#contact-phone");
+if (phoneEl) {
+    phoneEl.textContent = phoneParts.join(" ");
+}
+
 // ---------- Footer year ----------
 const footerYear = document.querySelector("#footer-year");
 if (footerYear) {

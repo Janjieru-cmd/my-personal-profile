@@ -5,7 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal profile and portfolio of Jhanzielle Jhay L. Amit, BSCS student.">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jhanzielle Jhay Amit — Personal Profile">
+    <meta property="og:description" content="Personal profile and portfolio of Jhanzielle Jhay L. Amit, BSCS student.">
+    <meta property="og:image" content="mypf.jfif">
+    <meta property="og:url" content="https://janjieru-cmd.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jhanzielle Jhay Amit — Personal Profile">
+    <meta name="twitter:description" content="Personal profile and portfolio of Jhanzielle Jhay L. Amit, BSCS student.">
+    <meta name="twitter:image" content="mypf.jfif">
+
     <title>Jhanzielle Jhay Amit — Personal Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -14,6 +31,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header>
         <nav>
             <span class="nav-mark">JJA</span>
@@ -29,7 +47,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <div class="hero-text">
                 <p class="eyebrow">Personal Profile</p>
@@ -222,8 +240,8 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <p><strong>Email:</strong> amitjhanzielle@gmail.com</p>
-            <p><strong>Contact No.:</strong> +63 961 572 0802</p>
+            <p><strong>Email:</strong> <span id="contact-email" class="contact-value">Loading…</span></p>
+            <p><strong>Contact No.:</strong> <span id="contact-phone" class="contact-value">Loading…</span></p>
             <div class="profile-links">
                 <a href="https://github.com/Janjieru-cmd" target="_blank" rel="noopener">GitHub</a>
                 <a href="https://www.facebook.com/jhanzielle.amit.3" target="_blank" rel="noopener">Facebook</a>
