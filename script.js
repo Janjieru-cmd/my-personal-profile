@@ -55,3 +55,13 @@ const footerYear = document.querySelector("#footer-year");
 if (footerYear) {
     footerYear.textContent = new Date().getFullYear();
 }
+
+// ---------- Profile photo tap-to-toggle (for touch devices) ----------
+// On touch screens there's no real "hover" state to leave, so :hover
+// alone gets stuck after a tap. This adds a click/tap toggle on top of it.
+const imageContainer = document.querySelector(".image-container");
+if (imageContainer) {
+    imageContainer.addEventListener("click", () => {
+        imageContainer.classList.toggle("swapped");
+    });
+}

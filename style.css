@@ -201,8 +201,14 @@ button:focus-visible {
     opacity: 0;
 }
 
-.image-container:hover .profile-hover,
-.image-container:focus-within .profile-hover {
+@media (hover: hover) and (pointer: fine) {
+    .image-container:hover .profile-hover,
+    .image-container:focus-within .profile-hover {
+        opacity: 1;
+    }
+}
+
+.image-container.swapped .profile-hover {
     opacity: 1;
 }
 
