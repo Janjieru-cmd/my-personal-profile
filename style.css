@@ -493,6 +493,33 @@ button:focus-visible {
 }
 
 /* ---------- Contact ---------- */
+.cv-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--paper);
+    background-color: var(--ink);
+    padding: 10px 18px;
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: 0.25s;
+}
+
+.cv-download-icon {
+    flex-shrink: 0;
+}
+
+.cv-download:hover,
+.cv-download:focus-visible {
+    background-color: var(--paper);
+    color: var(--ink);
+}
+
 .profile-links {
     display: flex;
     flex-wrap: wrap;
@@ -630,6 +657,18 @@ body.dark-mode .skill-card:hover {
 body.dark-mode .profile-links a:hover {
     background-color: #f0f0f0;
     color: #101010;
+}
+
+body.dark-mode .cv-download {
+    background-color: #f0f0f0;
+    color: #101010;
+    border-color: #f0f0f0;
+}
+
+body.dark-mode .cv-download:hover,
+body.dark-mode .cv-download:focus-visible {
+    background-color: #101010;
+    color: #f0f0f0;
 }
 
 /* ---------- Responsive ---------- */
