@@ -502,23 +502,75 @@ body.dark-mode .profile-links a:hover {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
+    main {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    header nav {
+        justify-content: center;
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 14px 18px;
+        font-size: 0.8rem;
+        order: 3;
+        width: 100%;
+    }
+
     .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 40px;
+        gap: 24px;
+        padding-top: 32px;
+        padding-bottom: 40px;
     }
 
     .hero-text {
         max-width: 100%;
     }
 
-    header nav {
-        justify-content: center;
-        text-align: center;
+    .hero h1 {
+        font-size: 1.6rem;
     }
 
-    main {
-        padding: 0 20px;
+    .image-container {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hobbies-card,
+    .project-card {
+        width: 100%;
+    }
+
+    .skill-container,
+    .profile-links {
+        justify-content: center;
+    }
+
+    #back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav-links {
+        gap: 10px 14px;
+        font-size: 0.75rem;
+    }
+
+    .hero h1 {
+        font-size: 1.4rem;
     }
 }
 
