@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal profile and portfolio of Jhanzielle Jhay L. Amit, BSCS student.">
+    <title>Jhanzielle Jhay Amit — Personal Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span class="nav-mark">JJA</span>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="themebutton" aria-pressed="false">Dark Mode</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Personal Profile</p>
+                <h1 id="title">Jhanzielle Jhay L. Amit</h1>
+                <p class="hero-role">First-Year BSCS Student · Aspiring Software Engineer</p>
+                <p class="hero-summary">I'm learning Java, SQL, HTML, and CSS while building the habits and
+                    projects that will get me there — one problem solved at a time.</p>
+            </div>
+            <div class="image-container">
+                <img class="profile profile-base" src="mypf.jfif" alt="Portrait of Jhanzielle Jhay L. Amit">
+                <img class="profile profile-hover" src="mypf-hover.jfif" alt="" aria-hidden="true">
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a first-year BSCS student with a growing passion for software development and technology. I'm
+                currently learning Java, SQL, HTML, and CSS while building my programming and problem-solving
+                skills. My goal is to become a Software Engineer and create useful applications that can solve
+                real-world problems. I enjoy learning through hands-on projects and continuously improving my
+                skills as a developer.</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <ol class="timeline">
+                <li>
+                    <span class="timeline-year">2014 – 2020</span>
+                    <h3>Primary School</h3>
+                    <p>Agus Elementary School</p>
+                </li>
+                <li>
+                    <span class="timeline-year">2020 – 2024</span>
+                    <h3>Junior High School</h3>
+                    <p>Marigondon National High School</p>
+                </li>
+                <li>
+                    <span class="timeline-year">2024 – 2026</span>
+                    <h3>Senior High School</h3>
+                    <p>Sto. Niño Mactan Montessori School</p>
+                    <p class="timeline-note">Technical-Vocational Livelihood — Information and Communications
+                        Technology</p>
+                </li>
+                <li>
+                    <span class="timeline-year">2026 – Present</span>
+                    <h3>Tertiary School</h3>
+                    <p>National University – Cebu</p>
+                    <p class="timeline-note">Bachelor of Science in Computer Science</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <div class="hobbies-container">
+                <div class="hobbies-card">
+                    <h3>Gaming</h3>
+                    <div class="hobbies-description">
+                        <ul>
+                            <li>Mobile Legends Bang Bang</li>
+                            <li>Valorant</li>
+                            <li>Roblox</li>
+                            <li>Bloodstrike</li>
+                            <li>Farlight 84</li>
+                            <li>Crossfire</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hobbies-card">
+                    <h3>Anime</h3>
+                    <div class="hobbies-description">
+                        <ul>
+                            <li>One Piece</li>
+                            <li>Jujutsu Kaisen</li>
+                            <li>Horimiya</li>
+                            <li>Blue Lock</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hobbies-card">
+                    <h3>K-drama</h3>
+                    <div class="hobbies-description">
+                        <ul>
+                            <li>When Life Gives You Tangerines</li>
+                            <li>Queen of Tears</li>
+                            <li>It's Okay Not to Be Okay</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hobbies-card">
+                    <h3>Movies</h3>
+                    <div class="hobbies-description">
+                        <ul>
+                            <li>Doctor Strange</li>
+                            <li>The Notebook</li>
+                            <li>10 Things I Hate About You</li>
+                            <li>How to Lose a Guy in 10 Days</li>
+                            <li>Jerry Maguire</li>
+                            <li>Into the Wild</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hobbies-card">
+                    <h3>Music</h3>
+                    <div class="hobbies-description">
+                        <p class="card-subhead">Artists</p>
+                        <ul>
+                            <li>Daniel Caesar</li>
+                            <li>Drake</li>
+                            <li>Taylor Swift</li>
+                            <li>Arthur Nery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skill-container">
+                <div class="skill-card">Java</div>
+                <div class="skill-card">SQL</div>
+                <div class="skill-card">HTML</div>
+                <div class="skill-card">CSS</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-container">
+                <div class="project-card">
+                    <h3>Student Management System</h3>
+                    <div class="project-description">
+                        <p>A Java-based system for managing student records, including adding, updating,
+                            deleting, and searching students.</p>
+                        <p class="project-tech">Java</p>
+                        <a class="project-link" href="https://github.com/Janjieru-cmd/Student-Management-System.git" target="_blank" rel="noopener">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Banking System</h3>
+                    <div class="project-description">
+                        <p>A Java-based banking system designed to handle basic banking operations.</p>
+                        <p class="project-tech">Java</p>
+                        <a class="project-link" href="https://github.com/Janjieru-cmd/Banking-System.git" target="_blank" rel="noopener">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>My Personal Profile</h3>
+                    <div class="project-description">
+                        <p>A personal portfolio website that showcases my background, education, skills,
+                            hobbies, projects, and social profiles.</p>
+                        <p class="project-tech">HTML, CSS</p>
+                        <a class="project-link" href="#" target="_blank" rel="noopener">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p><strong>Email:</strong> amitjhanzielle@gmail.com</p>
+            <p><strong>Contact No.:</strong> +63 961 572 0802</p>
+            <div class="profile-links">
+                <a href="https://github.com/Janjieru-cmd" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.facebook.com/jhanzielle.amit.3" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.instagram.com/janjieruuuuuu/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.linkedin.com/in/jhanzielle-jhay-amit-4b002542a/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="footer-year">2026</span> Jhanzielle Jhay Amit</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
