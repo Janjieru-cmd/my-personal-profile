@@ -133,6 +133,16 @@ if (skillsSection) {
     );
 
     skillsObserver.observe(skillsSection);
+
+    // Touch devices have no :hover state, so give skill cards a tap toggle
+    const hasHoverForSkills = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (!hasHoverForSkills) {
+        skillCards.forEach((card) => {
+            card.addEventListener("click", () => {
+                card.classList.toggle("tapped");
+            });
+        });
+    }
 }
 const imageContainer = document.querySelector(".image-container");
 if (imageContainer) {

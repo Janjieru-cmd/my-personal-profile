@@ -438,11 +438,13 @@ button:focus-visible {
     transition: filter 0.25s;
 }
 
-.skill-card:hover .skill-icon {
+.skill-card:hover .skill-icon,
+.skill-card.tapped .skill-icon {
     filter: grayscale(1) contrast(1.1) invert(1);
 }
 
-.skill-card:hover {
+.skill-card:hover,
+.skill-card.tapped {
     background-color: var(--ink);
     color: var(--paper);
     border-color: var(--ink);
@@ -456,7 +458,7 @@ button:focus-visible {
         background-color 0.25s, color 0.25s, border-color 0.25s,
         transform 1.4s ease-in-out,
         opacity 0.5s ease;
-    transition-delay: var(--mdelay, 0s);
+    transition-delay: 0s, 0s, 0s, var(--mdelay, 0s), 0s;
 }
 
 #skills.arranged .skill-card {
@@ -466,7 +468,7 @@ button:focus-visible {
         background-color 0.25s, color 0.25s, border-color 0.25s,
         transform 1.6s cubic-bezier(0.16, 0.68, 0.18, 1),
         opacity 1.2s ease;
-    transition-delay: var(--mdelay, 0s);
+    transition-delay: 0s, 0s, 0s, var(--mdelay, 0s), 0s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -679,7 +681,8 @@ body.dark-mode .skill-icon {
     filter: grayscale(1) contrast(1.1) invert(1);
 }
 
-body.dark-mode .skill-card:hover .skill-icon {
+body.dark-mode .skill-card:hover .skill-icon,
+body.dark-mode .skill-card.tapped .skill-icon {
     filter: grayscale(1) contrast(1.1) invert(0);
 }
 
@@ -691,7 +694,8 @@ body.dark-mode .timeline li::before {
     background-color: #f0f0f0;
 }
 
-body.dark-mode .skill-card:hover {
+body.dark-mode .skill-card:hover,
+body.dark-mode .skill-card.tapped {
     background-color: #f0f0f0;
     color: #101010;
 }
