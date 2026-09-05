@@ -76,7 +76,64 @@ if (footerYear) {
     footerYear.textContent = new Date().getFullYear();
 }
 
-// ---------- Profile photo glitch transition ----------
+// ---------- Tech Stack: messy on load, arranges on scroll ----------
+const skillsSection = document.querySelector("#skills");
+if (skillsSection) {
+    const skillCards = skillsSection.querySelectorAll(".skill-card");
+
+    skillCards.forEach((card, i) => {
+        card.style.setProperty("--mdelay", (i % 14) * 0.09 + "s");
+    });
+
+    function randomOffset() {
+        return {
+            mx: (Math.random() * 120 - 60).toFixed(0) + "px",
+            my: (Math.random() * 80 - 40).toFixed(0) + "px",
+            mr: (Math.random() * 50 - 25).toFixed(0) + "deg",
+        };
+    }
+
+    function applyOffset(card) {
+        const { mx, my, mr } = randomOffset();
+        card.style.setProperty("--mx", mx);
+        card.style.setProperty("--my", my);
+        card.style.setProperty("--mr", mr);
+    }
+
+    // Give every card an initial messy position before anything scrolls
+    skillCards.forEach(applyOffset);
+
+    function startFloating() {
+        skillCards.forEach((card) => {
+            if (card._floatInterval) return;
+            applyOffset(card);
+            card._floatInterval = setInterval(() => applyOffset(card), 1300 + Math.random() * 900);
+        });
+    }
+
+    function stopFloating() {
+        skillCards.forEach((card) => {
+            clearInterval(card._floatInterval);
+            card._floatInterval = null;
+        });
+    }
+
+    const skillsObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                skillsSection.classList.toggle("arranged", entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    stopFloating();
+                } else {
+                    startFloating();
+                }
+            });
+        },
+        { threshold: 0.4 }
+    );
+
+    skillsObserver.observe(skillsSection);
+}
 const imageContainer = document.querySelector(".image-container");
 if (imageContainer) {
     let glitchEndTimeout;

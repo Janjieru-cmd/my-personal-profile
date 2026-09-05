@@ -401,6 +401,19 @@ button:focus-visible {
 }
 
 /* ---------- Skills ---------- */
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px 24px;
+}
+
+.tech-category-title {
+    font-size: 0.95rem;
+    color: var(--grey-500);
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+}
+
 .skill-container {
     display: flex;
     flex-wrap: wrap;
@@ -415,7 +428,7 @@ button:focus-visible {
     padding: 10px 20px;
     border: 1px solid var(--border);
     border-radius: 4px;
-    transition: 0.25s;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 }
 
 .skill-icon {
@@ -433,6 +446,35 @@ button:focus-visible {
     background-color: var(--ink);
     color: var(--paper);
     border-color: var(--ink);
+}
+
+/* Messy-on-load, settles into place once scrolled into view */
+#skills .skill-card {
+    transform: translate(var(--mx, 0), var(--my, 0)) rotate(var(--mr, 0deg));
+    opacity: 0.35;
+    transition:
+        background-color 0.25s, color 0.25s, border-color 0.25s,
+        transform 1.4s ease-in-out,
+        opacity 0.5s ease;
+    transition-delay: var(--mdelay, 0s);
+}
+
+#skills.arranged .skill-card {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+    transition:
+        background-color 0.25s, color 0.25s, border-color 0.25s,
+        transform 1.6s cubic-bezier(0.16, 0.68, 0.18, 1),
+        opacity 1.2s ease;
+    transition-delay: var(--mdelay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #skills .skill-card {
+        transform: none;
+        opacity: 1;
+        transition: none;
+    }
 }
 
 /* ---------- Projects ---------- */
