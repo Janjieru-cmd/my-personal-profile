@@ -183,12 +183,47 @@ button:focus-visible {
     white-space: nowrap;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.name-text.typing::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 2px;
+    animation: cursor-blink 0.9s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+    50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .name-text.typing::after {
+        animation: none;
+    }
+}
+
 .verified-badge {
     display: inline-block;
     width: 26px;
     height: 26px;
     margin-left: 8px;
     vertical-align: middle;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.verified-badge.revealed {
+    opacity: 1;
 }
 
 .hero-role {

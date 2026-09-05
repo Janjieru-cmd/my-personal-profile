@@ -14,6 +14,49 @@ themeButton.addEventListener("click", function () {
     setTheme(!document.body.classList.contains("dark-mode"));
 });
 
+// ---------- Typewriter effect for the hero name (looping) ----------
+const nameSrText = document.querySelector("#title .sr-only");
+const nameText = document.querySelector("#title .name-text");
+const verifiedBadge = document.querySelector(".verified-badge");
+
+if (nameSrText && nameText) {
+    const fullName = nameSrText.textContent.trim();
+    nameText.classList.add("typing");
+
+    function typeNextChar(charIndex) {
+        if (charIndex < fullName.length) {
+            nameText.textContent = fullName.slice(0, charIndex + 1);
+            setTimeout(() => typeNextChar(charIndex + 1), 55 + Math.random() * 45);
+        } else {
+            if (verifiedBadge) verifiedBadge.classList.add("revealed");
+            setTimeout(startErasing, 1800);
+        }
+    }
+
+    function eraseNextChar(charIndex) {
+        if (charIndex >= 0) {
+            nameText.textContent = fullName.slice(0, charIndex);
+            setTimeout(() => eraseNextChar(charIndex - 1), 30 + Math.random() * 25);
+        } else {
+            setTimeout(() => typeNextChar(0), 500);
+        }
+    }
+
+    function startErasing() {
+        if (verifiedBadge) verifiedBadge.classList.remove("revealed");
+        eraseNextChar(fullName.length);
+    }
+
+    // Respect reduced-motion preference: show the full name statically, no loop
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        nameText.textContent = fullName;
+        nameText.classList.remove("typing");
+        if (verifiedBadge) verifiedBadge.classList.add("revealed");
+    } else {
+        setTimeout(() => typeNextChar(0), 300);
+    }
+}
+
 // ---------- Active nav link on scroll ----------
 const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll(".nav-links a");
