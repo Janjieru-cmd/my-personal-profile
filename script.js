@@ -134,15 +134,15 @@ if (skillsSection) {
 
     skillsObserver.observe(skillsSection);
 
-    // Touch devices have no :hover state, so give skill cards a tap toggle
-    const hasHoverForSkills = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    if (!hasHoverForSkills) {
-        skillCards.forEach((card) => {
-            card.addEventListener("click", () => {
-                card.classList.toggle("tapped");
-            });
+    // Give skill cards a tap toggle too, since touchscreens have no :hover
+    // state at all — attaching this unconditionally is harmless for mouse
+    // users and avoids relying on a hover-capability check that can
+    // misreport on some real devices.
+    skillCards.forEach((card) => {
+        card.addEventListener("click", () => {
+            card.classList.toggle("tapped");
         });
-    }
+    });
 }
 const imageContainer = document.querySelector(".image-container");
 if (imageContainer) {
