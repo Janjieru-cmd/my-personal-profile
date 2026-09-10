@@ -529,6 +529,17 @@ button:focus-visible {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+.project-screenshot {
+    display: block;
+    width: calc(100% + 40px);
+    height: 130px;
+    object-fit: cover;
+    margin: -20px -20px 14px -20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 1px solid var(--border);
+}
+
 .project-card:hover {
     border-color: var(--ink);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
@@ -720,6 +731,10 @@ body.dark-mode .skill-card,
 body.dark-mode .project-card,
 body.dark-mode .profile-links a {
     border-color: #333333;
+}
+
+body.dark-mode .project-screenshot {
+    border-bottom-color: #333333;
 }
 
 body.dark-mode .skill-card,
